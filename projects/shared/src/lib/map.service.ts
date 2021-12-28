@@ -34,11 +34,11 @@ export class MapService {
     });
     this.mapView.navigation.momentumEnabled = false;
 
-    const locate = new Locate({
-      view: this.mapView,
+    // const locate = new Locate({
+    //   view: this.mapView,
 
-    });
-    this.mapView.ui.add(locate, 'bottom-right');
+    // });
+    // this.mapView.ui.add(locate, 'bottom-right');
 
     this.mapView.when(() => {
       this.mapLoaded = true;

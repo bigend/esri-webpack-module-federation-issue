@@ -1,1 +1,7 @@
 @import url("https://js.arcgis.com/4.21/esri/css/main.css");
+.app-label {
+  z-index: 1000;
+  position: absolute;
+  background: white;
+  margin-left: 45%;
+}

@@ -1,7 +1,8 @@
 .map-div,
-app-map-navigation,
-app-breadcrumb {
+.navigation-panel {
   position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
 .map-div {
@@ -9,16 +10,10 @@ app-breadcrumb {
   height: 100%;
 }
 
-// app-map-navigation{
-//   top:15px;
-//   left:75px;
-// }
-
-// app-breadcrumb{
-//   top:52px;
-//   left:75px;
-
-// }
+.navigation-panel {
+  top: 15px;
+  left: 75px;
+}
 
 .map-loader {
   position: fixed;
@@ -32,4 +27,36 @@ app-breadcrumb {
 
 ::ng-deep .map-wrapper .map-div .esri-view-root .esri-view-surface:focus::after {
   content: none !important;
+}
+
+.navigation-panel {
+  button {
+    width: 32px !important;
+    height: 32px !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    cursor: pointer;
+    margin: 0 5px 5px 0;
+    border: 1px solid lightgray;
+    background: white;
+  }
+
+  button:hover {
+    background-color: lightgrey;
+  }
+
+  .btn-home-extent {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M11 8.5V5H6v8.5L2.5 17H5v12h8v-8h6v8h8V17h2.5L16 3.5zM26 16v12h-6v-8h-8v8H6V16H4.914L7 13.914V6h3v4.914l6-6L27.086 16z'/%3E%3Cpath fill='none' d='M0 0h32v32H0z'/%3E%3C/svg%3E");
+  }
+
+  .locate-btn {
+    //display: inline-flex;
+    display: inline-block;
+    line-height: 49px;
+
+    ::ng-deep span.esri-icon-locate:before {
+      position: relative;
+      bottom: 7px;
+    }
+  }
 }

@@ -1,27 +1,11 @@
-# App
+## Run application & reproduce issues
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+Run `npm install` to install dependencies.
 
-## Development server
+Run `serve:plugins` to serve app with remote entry. Navigate to `http://localhost:4201/`. The app hosting remote entries will be opened. Here the home button, locate button and scale are working as expected.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `serve:app` to serve app that consumes remote entries. Navigate to `http://localhost:4200/`. Here the home button, locate button and scale are not working at all and console is filled with errors like this one:
 
-## Code scaffolding
+"Logger.js:5 [esri.core.Accessor] Accessor#set Assigning an instance of 'esri.geometry.SpatialReference' which is not a subclass of 'esri.geometry.SpatialReference".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
