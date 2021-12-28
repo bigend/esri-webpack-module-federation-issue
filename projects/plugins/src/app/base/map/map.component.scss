@@ -1,0 +1,35 @@
+.map-div,
+app-map-navigation,
+app-breadcrumb {
+  position: absolute;
+}
+
+.map-div {
+  width: 100%;
+  height: 100%;
+}
+
+// app-map-navigation{
+//   top:15px;
+//   left:75px;
+// }
+
+// app-breadcrumb{
+//   top:52px;
+//   left:75px;
+
+// }
+
+.map-loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  text-align: center;
+  margin-left: -100px;
+  margin-right: -100px;
+}
+
+::ng-deep .map-wrapper .map-div .esri-view-root .esri-view-surface:focus::after {
+  content: none !important;
+}

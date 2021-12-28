@@ -13,10 +13,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "strictPropertyInitialization": false,
     "paths": {
       "shared": [
-        "dist/shared/shared",
-        "dist/shared"
+        "projects/shared/src/public-api.ts"
+
       ]
     },
     "target": "es2020",

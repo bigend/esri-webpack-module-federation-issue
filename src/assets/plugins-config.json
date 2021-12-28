@@ -1,0 +1,12 @@
+{
+
+  "mapComponent": {
+    "mfEntry": "http://localhost:4201/BasePluginRemoteEntry.js",
+    "name": "BasePlugin",
+    "exposedModule": "./MapComponent",
+    "ngModuleName": "MapComponent",
+    "layoutContainerName": "base",
+    "title": "",
+    "icon": ""
+  }
+}

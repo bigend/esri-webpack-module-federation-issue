@@ -5,12 +5,12 @@ const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
-  path.join(__dirname, 'tsconfig.json'),
+  path.join(__dirname, '../../tsconfig.json'),
   ['shared']);
 
 module.exports = {
   output: {
-    uniqueName: "app",
+    uniqueName: "plugins",
     publicPath: "auto"
   },
   optimization: {
@@ -26,27 +26,38 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        // library: { type: "module" },
-
+      // library: { type: "var", name: "BasePlugin" },
+      library: {type: "module"},
+        // library: { type: "any" },
+      // filename: 'BasePluginRemoteEntry.js',
+      // exposes: {
+      //   './MapComponent': './projects/plugins/src/app/base/map/map.component.ts',
+      //   },
         // For remotes (please adjust)
-        // name: "app",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },
+        name: "BasePlugin",
+        filename: "BasePluginRemoteEntry.js",
+        exposes: {
+          './MapComponent': './projects/plugins/src/app/base/map/map.component.ts',
+          // './Module': './projects/plugins/src/app/base/base.module.ts',
+        },
 
         // For hosts (please adjust)
-        remotes: {
+        // remotes: {
         //     "plugins": "http://localhost:4200/remoteEntry.js",
 
-        },
+        // },
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto'},
+          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto'  },
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@arcgis/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          // "shared": {
+          //   singleton: true, strictVersion: true, eager: true,
+          //   import: path.join(__dirname, '../../tsconfig.json')
+          // },
+
           ...sharedMappings.getDescriptors()
         })
 

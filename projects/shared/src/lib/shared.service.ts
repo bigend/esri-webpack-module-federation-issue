@@ -5,5 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
-  constructor() { }
+  compNames = '';
+
+  constructor() {
+    console.log("--- SharedService constructor hit ---");
+
+  }
+
+  setComponent(componentName: string) {
+    this.compNames += componentName + ' ';
+    console.log("SharedServiceComonents: " + this.compNames);
+  }
+
+
 }
