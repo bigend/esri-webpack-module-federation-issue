@@ -6,8 +6,8 @@
     "serve:app": "ng serve -o",
     "serve:plugins": "ng serve plugins -o",
     "build:shared": "ng build shared --configuration production",
-    "build:plugins": "ng build plugins",
-    "build:app": "ng build",
+    "build:plugins": "ng build plugins --base-href=/esri-mf-test/plugins ",
+    "build:app": "ng build --base-href=/esri-mf-test/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
